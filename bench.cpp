@@ -80,6 +80,10 @@ extern "C" void sumsq_16(const double *data, size_t length);
 extern "C" void sumsq_32(const double *data, size_t length);
 extern "C" void sumsq_64(const double *data, size_t length);
 extern "C" void sumsq_128(const double *data, size_t length);
+extern "C" void sumsq_256(const double *data, size_t length);
+extern "C" void sumsq_512(const double *data, size_t length);
+extern "C" void sumsq_1024(const double *data, size_t length);
+extern "C" void sumsq_2048(const double *data, size_t length);
 
 extern "C" void sumsqf_0(const float *data, size_t length);
 extern "C" void sumsqf_1(const float *data, size_t length);
@@ -90,6 +94,10 @@ extern "C" void sumsqf_16(const float *data, size_t length);
 extern "C" void sumsqf_32(const float *data, size_t length);
 extern "C" void sumsqf_64(const float *data, size_t length);
 extern "C" void sumsqf_128(const float *data, size_t length);
+extern "C" void sumsqf_256(const float *data, size_t length);
+extern "C" void sumsqf_512(const float *data, size_t length);
+extern "C" void sumsqf_1024(const float *data, size_t length);
+extern "C" void sumsqf_2048(const float *data, size_t length);
 
 extern "C" uint32_t SUMSQ_BASE_STRIDE;
 
@@ -106,7 +114,11 @@ const std::map<size_t, Benchmark<float>> fp_benchmarks {
     {16, sumsqf_16},
     {32, sumsqf_32},
     {64, sumsqf_64},
-    {128, sumsqf_128}
+    {128, sumsqf_128},
+    {256, sumsqf_256},
+    {512, sumsqf_512},
+    {1024, sumsqf_1024},
+    {2048, sumsqf_2048}
 };
 
 const std::map<size_t, Benchmark<double>> dp_benchmarks {
@@ -118,7 +130,11 @@ const std::map<size_t, Benchmark<double>> dp_benchmarks {
     {16, sumsq_16},
     {32, sumsq_32},
     {64, sumsq_64},
-    {128, sumsq_128}
+    {128, sumsq_128},
+    {256, sumsq_256},
+    {512, sumsq_512},
+    {1024, sumsq_1024},
+    {2048, sumsq_2048}
 };
 
 struct NullStream : public std::ostream
